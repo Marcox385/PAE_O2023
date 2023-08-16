@@ -1,0 +1,90 @@
+<!-- Demostración de selectores en CSS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snippet</title>
+    <style>
+        /* Quitar espacios al rededor del body */
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #local {
+            color: purple;
+        }
+
+        .enlace {
+            color: blue;
+        }
+
+        a {
+            color: green;
+        }
+
+        a:visited {
+            color: red;
+        }
+
+        button {
+            background-color: lightgray;
+            border: solid 1px gray;
+            border-radius: 5px;
+        }
+
+        button[disabled] {
+            background-color: #fff;
+        }
+
+        input[type="password"] {
+            background-color: lightcoral;
+        }
+
+        /* Centrar div */
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+
+        /* La palabra only se usa para evitar problemas en impresión */
+        @media only screen and (max-width: 1500px) {
+            div {
+                background-color: #abc;
+            }
+
+            /* Si se utilizara min en vez de max-width, esta regla no se vería aplicada (se sobreescribe) */
+        }
+
+        @media only screen and (max-width: 600px) {
+            div {
+                background-color: violet;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="https://google.com">google.com</a>
+    <a href="/here" id="local" class="enlace">Here</a>
+    <a href="" id="#" class="enlace">Lorem</a>
+
+    <button>Click me!</button>
+    <button disabled>Cant click me</button>
+
+    <input type="text" name="" id="">
+    <input type="email" name="" id="">
+    <input type="password" name="" id="">
+
+    <!--Ejercicio: Centrar el siguiente DIV-->
+    <div>
+
+    </div>
+</body>
+</html>
