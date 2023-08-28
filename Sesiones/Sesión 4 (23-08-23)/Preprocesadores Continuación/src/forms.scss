@@ -1,0 +1,30 @@
+@import 'variables';
+
+@mixin button {
+    padding: 12px 6px;
+    background-color: $default-color;
+    border: solid 1px darken($default-color, 40%);
+    color: darken($default-color, 40%);
+    border-radius: 6px;
+    @content;
+}
+
+.button {
+    @include button {
+        width: 100px;
+    };
+}
+
+.primary-button {
+    @include button;
+    background-color: $primary-color;
+    border-color: darken($primary-color, 40%);
+    color: darken($primary-color, 40%);
+}
+
+.secondary-button {
+    @extend .primary-button;
+    background-color: $secondary-color;
+    border-color: darken($secondary-color, 40%);
+    color: darken($secondary-color, 40%);
+}

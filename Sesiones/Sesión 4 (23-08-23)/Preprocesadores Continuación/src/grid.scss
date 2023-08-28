@@ -1,0 +1,17 @@
+@use "sass:math";
+
+$columnas: 24;
+
+@function getWidth($cols) {
+    @return math.div($cols, $columnas) * 100%;
+}
+
+.ejemplo {
+    width: getWidth(12);
+}
+
+@for $i from 1 through $columnas {
+    .col-#{$i} {
+        width: getWidth($i);
+    }
+}

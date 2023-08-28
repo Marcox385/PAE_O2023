@@ -1,0 +1,27 @@
+.button {
+  padding: 12px 6px;
+  background-color: lightgray;
+  border: solid 1px #6d6d6d;
+  color: #6d6d6d;
+  border-radius: 6px;
+  width: 100px;
+}
+
+.primary-button, .secondary-button {
+  padding: 12px 6px;
+  background-color: lightgray;
+  border: solid 1px #6d6d6d;
+  color: #6d6d6d;
+  border-radius: 6px;
+  background-color: lightblue;
+  border-color: #2e7e99;
+  color: #2e7e99;
+}
+
+.secondary-button {
+  background-color: lightcoral;
+  border-color: #931111;
+  color: #931111;
+}
+
+/*# sourceMappingURL=forms.css.map */

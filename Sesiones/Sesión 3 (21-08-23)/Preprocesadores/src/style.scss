@@ -1,0 +1,16 @@
+$primary-color: #000;
+
+header {
+    height: 80px;
+    background: {
+        color: $primary-color;
+    }
+
+    span {
+        color: #fff
+    }
+}
+
+button {
+    background-color: $primary-color;
+}
