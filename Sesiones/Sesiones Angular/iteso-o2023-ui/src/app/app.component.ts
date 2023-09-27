@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'iteso-o2023-ui';
+  title = 'Example app';
+  name = 'Usuario';
+
+  constructor() {
+    setTimeout(() => {
+      this.name = 'Usuari@'
+    }, 3000);
+  }
 }
