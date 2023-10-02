@@ -1,1 +1,32 @@
 <h1>Bienvenid@ {{ name }}</h1>
+
+
+<button (click)="onClick($event)">Click me!</button>
+
+<p (click)="onClick($event)">Testing 1,2
+
+    <a (click)="onClick($event)">Click me as well!</a>
+1,2</p>
+
+<hr>
+
+<span>Valor: {{titulo_tarea}}</span>
+<br>
+
+<form (submit)="agregarTarea(campo)">
+    <input #campo placeholder="Título de la tarea" type="text">
+    <button>Crear</button>
+</form>
+
+<ul>
+    <li *ngFor="let tarea of tareas">
+        {{tarea}}
+    </li>
+</ul>
+
+<!-- <input #campo (keyup)="setTitulo($event)" placeholder="Título de la tarea" type="text"> -->
+<!-- <input #campo (keyup)="setTitulo($event)" placeholder="Título de la tarea" type="text">
+<button (click)="agregarTarea(campo)">Craer</button>
+<ul>
+    <li>Tarea 1</li>
+</ul> -->

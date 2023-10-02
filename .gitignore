@@ -3,6 +3,7 @@
 *.env
 
 # Directorios específicos
-Tareas/
 node_modules/
+Tareas/
+Proyecto/
 uploads/
