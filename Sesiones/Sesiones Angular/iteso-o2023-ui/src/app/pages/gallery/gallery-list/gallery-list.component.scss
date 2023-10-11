@@ -1,0 +1,21 @@
+#photoGrid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 3;
+
+    div {
+        img {
+            width: 400px;
+            padding: 20px;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        p {
+            word-wrap: anywhere;
+        }
+    }
+}

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { User } from 'src/app/shared/interfaces/user';
-import {UserService } from 'src/app/shared/services/user.service';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'MRCH-users',

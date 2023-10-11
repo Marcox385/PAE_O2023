@@ -7,3 +7,4 @@ node_modules/
 Tareas/
 Proyecto/
 uploads/
+**/environments/**
