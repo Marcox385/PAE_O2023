@@ -29,10 +29,20 @@ export class UserService {
     }
   ]
 
+  private user: User = { name: '', email: '' };
+
   constructor(private httpClient: HttpClient) { }
 
   getUsersSync(): User[] {
     return this.users;
+  }
+
+  setUser(user: User): void {
+    this.user = user;
+  }
+
+  getUser(): User {
+    return this.user;
   }
 
   getUsers(): Observable<User[]> {

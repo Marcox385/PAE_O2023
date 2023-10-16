@@ -1,0 +1,15 @@
+table {
+    width: 100%;
+    text-align: left;
+
+    tr:nth-child(even) {
+        background-color: #00457c;
+        color: white;
+    }
+}
+
+tr:hover:not(:first-child) {
+    cursor: pointer;
+    background-color: lightblue !important;
+    color: black !important;
+}

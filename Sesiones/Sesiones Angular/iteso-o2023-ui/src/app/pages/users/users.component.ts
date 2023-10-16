@@ -8,27 +8,27 @@ import { UserService } from 'src/app/shared/services/user.service';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss']
 })
-export class UsersComponent implements OnInit, OnDestroy {
+export class UsersComponent {
 
-  users: User[] = [];
-  // private userService: UserService;
+  // users: User[] = [];
+  // // private userService: UserService;
 
-  constructor(private userService: UserService) {
-    console.log(userService);
-    this.userService = userService;
-  }  
+  // constructor(private userService: UserService) {
+  //   console.log(userService);
+  //   this.userService = userService;
+  // }  
 
-  ngOnInit(): void {
-      console.log('Users component initialized!');
-      // this.users = this.userService.getUsersSync();
+  // ngOnInit(): void {
+  //     console.log('Users component initialized!');
+  //     // this.users = this.userService.getUsersSync();
 
-      this.userService.getUsers().subscribe((response: User[]) => {
-        this.users = response;
-      });
-  }
+  //     this.userService.getUsers().subscribe((response: User[]) => {
+  //       this.users = response;
+  //     });
+  // }
 
-  ngOnDestroy(): void {
-      console.log('Users component destroyed!');
-  }
+  // ngOnDestroy(): void {
+  //     console.log('Users component destroyed!');
+  // }
 
 }

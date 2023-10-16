@@ -1,0 +1,22 @@
+<h2>Lista de usuarios</h2>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+
+    <!-- <tr [routerLink]="user.id" *ngFor="let user of users">
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+    </tr> -->
+    <tr (click)="selectUser(user)" *ngFor="let user of users">
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+    </tr>
+</table>
+
+<hr>
+<MRCH-user-profile [user]="activeUser"></MRCH-user-profile>
+
+<h3 *ngIf="error">ERROR</h3>
