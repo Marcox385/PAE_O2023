@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 import { User } from '../interfaces/user';
 import { environment } from 'src/environments/environment';
@@ -31,15 +31,20 @@ export class UserService {
 
   private user: User = { name: '', email: '' };
 
+  selectedUser: BehaviorSubject<User> = new BehaviorSubject<User>({
+    name: '',
+    email: ''
+  });
+
   constructor(private httpClient: HttpClient) { }
 
   getUsersSync(): User[] {
     return this.users;
   }
 
-  setUser(user: User): void {
-    this.user = user;
-  }
+  // setUser(user: User): void {
+  //   this.user = user;
+  // }
 
   getUser(): User {
     return this.user;
@@ -48,6 +53,10 @@ export class UserService {
   getUsers(): Observable<User[]> {
     const url = environment.apiUrl + 'users';
     return this.httpClient.get<User[]>(url);
+  }
+
+  setUser(user: User) {
+    this.selectedUser.next(user);
   }
 
 }

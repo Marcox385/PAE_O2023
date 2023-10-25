@@ -1,4 +1,4 @@
-<header>
+<!-- <header>
     <span>Tareas App</span>
 
     <ul>
@@ -12,4 +12,13 @@
             <a routerLink="photos">Photos</a>
         </li>
     </ul>
-</header>
+
+    <span>{{user.email}}</span>
+</header> -->
+
+<mat-toolbar color="primary">
+    <span>MyApp</span>
+    <span class="spacer"></span>
+    <a mat-flat-button color="primary" routerLink="users">Users</a>
+    <a mat-flat-button color="primary" routerLink="photos">Photos</a>
+</mat-toolbar>

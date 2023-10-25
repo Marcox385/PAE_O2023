@@ -40,5 +40,7 @@ export class UserListComponent implements OnInit {
   selectUser(user: User) {
     // this.userService.setUser(user);
     this.activeUser = user;
+    // this.onUserSelected.emit(user);
+    this.userService.setUser(user);
   }
 }

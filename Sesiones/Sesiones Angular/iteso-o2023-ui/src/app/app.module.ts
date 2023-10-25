@@ -19,6 +19,9 @@ import { GalleryDataComponent } from './pages/gallery/gallery-data/gallery-data.
 import { UserDataComponent } from './pages/users/user-data/user-data.component';
 import { UserListComponent } from './pages/users/user-list/user-list.component';
 import { UserProfileComponent } from './pages/users/user-list/user-profile/user-profile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MaterialModule } from './modules/material/material.module';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,9 @@ import { UserProfileComponent } from './pages/users/user-list/user-profile/user-
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
