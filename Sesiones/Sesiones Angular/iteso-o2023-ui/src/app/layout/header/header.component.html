@@ -19,6 +19,9 @@
 <mat-toolbar color="primary">
     <span>MyApp</span>
     <span class="spacer"></span>
-    <a mat-flat-button color="primary" routerLink="users">Users</a>
-    <a mat-flat-button color="primary" routerLink="photos">Photos</a>
+    <a *ngIf="!loginStatus" mat-flat-button color="primary" routerLink="login">Login</a>
+    <a *ngIf="loginStatus" mat-flat-button color="primary" routerLink="users">Users</a>
+    <a *ngIf="loginStatus" mat-flat-button color="primary" routerLink="photos">Photos</a>
+    <a *ngIf="!loginStatus" mat-flat-button color="primary" routerLink="signup">Registro</a>
+    <a *ngIf="loginStatus" mat-flat-button color="primary" (click)="logout()">Cerrar sesión</a>
 </mat-toolbar>

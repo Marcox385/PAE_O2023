@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { User } from 'src/app/shared/interfaces/user';
+import { TokenService } from 'src/app/shared/services/token.service';
 import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
@@ -30,5 +32,11 @@ export class UsersComponent {
   // ngOnDestroy(): void {
   //     console.log('Users component destroyed!');
   // }
+
+  constructor (tokenService: TokenService, router: Router) {
+    // if (!tokenService.isLoggedin()) {
+    //   router.navigate(['login']);
+    // }
+  }
 
 }

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -22,6 +22,9 @@ import { UserProfileComponent } from './pages/users/user-list/user-profile/user-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './modules/material/material.module';
+import { SignupComponent } from './pages/signup/signup.component';
+import { HighlightDirective } from './shared/directives/highlight.directive';
+import { LoginStatusDirective } from './shared/directives/login-status.directive';
 
 @NgModule({
   declarations: [
@@ -39,12 +42,16 @@ import { MaterialModule } from './modules/material/material.module';
     GalleryDataComponent,
     UserDataComponent,
     UserListComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    SignupComponent,
+    HighlightDirective,
+    LoginStatusDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule

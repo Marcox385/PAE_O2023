@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { TokenService } from 'src/app/shared/services/token.service';
 
 @Component({
   selector: 'MRCH-home',
@@ -12,10 +14,14 @@ export class HomeComponent {
   titulo_tarea: string = 'Hola';
   acepto: boolean = false;
 
-  constructor() {
+  constructor(tokenService: TokenService, router: Router) {
     setTimeout(() => {
       this.name = 'Usuari@'
     }, 3000);
+
+    // if (!tokenService.isLoggedin()) {
+    //   router.navigate(['login']);
+    // }
   }
 
   onClick(event: Event): void {

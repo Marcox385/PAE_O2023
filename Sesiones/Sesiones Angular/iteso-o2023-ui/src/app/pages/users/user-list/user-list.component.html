@@ -10,6 +10,8 @@
         <td>{{user.name}}</td>
         <td>{{user.email}}</td>
     </tr> -->
+    
+    <!-- [appHighlight]="selectedUser.id === user.id" -->
     <tr (click)="selectUser(user)" *ngFor="let user of users">
         <td>{{user.name}}</td>
         <td>{{user.email}}</td>

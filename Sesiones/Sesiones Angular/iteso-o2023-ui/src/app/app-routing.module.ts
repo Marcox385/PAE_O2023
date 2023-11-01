@@ -12,27 +12,34 @@ import { GalleryListComponent } from './pages/gallery/gallery-list/gallery-list.
 import { CreateGalleryComponent } from './pages/gallery/create-gallery/create-gallery.component';
 import { GalleryDataComponent } from './pages/gallery/gallery-data/gallery-data.component';
 import { EditGalleryComponent } from './pages/gallery/edit-gallery/edit-gallery.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { AuthGuard } from './shared/guards/auth.guard';
+import { UnauthGuard } from './shared/guards/unauth.guard';
+import { RoleGuard } from './shared/guards/role.guard';
 
 // pathMatch (para coincidir con la ruta): full, prefix
 
 const routes: Routes = [
-  { path: '', redirectTo: 'users', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent, canActivate: [UnauthGuard] },
   {
-    path: 'users', component: UsersComponent, children: [
+    path: 'users', component: UsersComponent, canActivate: [AuthGuard, RoleGuard],
+    children: [
       { path: '', component: UserListComponent },
       { path: ':id', component: UserDataComponent }
     ]
   },
   {
-    path: 'photos', component: GalleryComponent, children: [
+    path: 'photos', component: GalleryComponent, canActivate: [AuthGuard],
+    children: [
       { path: '', component: GalleryListComponent },
       { path: 'create', component: CreateGalleryComponent },
       { path: ':id', component: GalleryDataComponent },
       { path: ':id/edit', component: EditGalleryComponent }
     ]
   },
+  { path: 'signup', component: SignupComponent, canActivate: [AuthGuard] },
   { path: '**', component: NotFoundComponent }
 ];
 
